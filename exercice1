@@ -1,0 +1,66 @@
+class Animal {
+    private _id: number;
+    private _nom: string;
+    private _age: number;
+    private _debutRet: Date;
+    private _finPret: Date;
+
+    constructor(
+        id: number,
+        nom: string,
+        age: number,
+        debutRet: Date,
+        finPret: Date
+    ) {this._id = id;
+        this._nom = nom;
+        this._age = age;
+        this._debutRet = debutRet;
+        this._finPret = finPret;
+    }
+    get id(): number {
+        return this._id;
+    }
+
+    get nom(): string {
+        return this._nom;
+    }
+
+    set nom(nouveauNom: string) {
+        this._nom = nouveauNom;
+    }
+
+    get age(): number {
+        return this._age;
+    }
+
+    set age(nouvelAge: number) {
+        this._age = nouvelAge;
+    }
+
+    get debutRet(): Date {
+        return this._debutRet;
+    }
+
+    set debutRet(nouvelleDate: Date) {
+        this._debutRet = nouvelleDate;
+    }
+
+    get finPret(): Date {
+        return this._finPret;
+    }
+
+    set finPret(nouvelleDate: Date) {
+        this._finPret = nouvelleDate;
+    }
+
+    faireDuBruit() {
+        
+    }
+}
+
+const buddy = new Chien(1, "Buddy", 3, new Date(2023, 8, 1), new Date(2023, 8, 15), "Golden Retriever");
+
+console.log(`Nom du chien : ${buddy.nom}`);
+console.log(`Âge du chien : ${buddy.age}`);
+console.log(`Date de début de prêt : ${buddy.debutRet.toLocaleDateString()}`);
+console.log(`Date de fin de prêt : ${buddy.finPret.toLocaleDateString()}`);
